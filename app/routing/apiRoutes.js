@@ -25,9 +25,9 @@ module.exports = function(app) {
     res.json(newDog);
 
     for (var i = 0; i < dogs.length; i++) {
-    
-    var diff = Math.abs(dogs[i].scores - newDog);
-    console.log(diff);
+    var newInt = parseInt(newDog.q1 + newDog.q2 + newDog.q3 + newDog.q4 + newDog.q5 + newDog.q6 + newDog.q7 + newDog.q8 + newDog.q9 + newDog.q10)
+    var diff = Math.abs(parsedInt(dogs[i].scores) - parsedInt(newInt));
+    console.log(parseInt(diff));
     if (diff < 3 ) {
         var match = dogs[i];
         matchDog.push(match);
