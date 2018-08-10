@@ -14,27 +14,28 @@ module.exports = function(app) {
     
     var newDog = req.body;
     var newScore = newDog.scores;
-    var match = '';
-    var matchPic = '';
-    var diff = 0;
-
+    var lowestNumber = {
+			matchName: "",
+			matchPic: "",
+			lowestScore: 1000
+		};
+    
     for (var i = 0; i < dogs.length; i++) {
       console.log(dogs[i].name);
+      console.log(dogs[i])
+      var diff = 0;
       for (var j = 0; j < 10; j++) {
     diff += Math.abs(parseInt(dogs[i].scores[j]) - parseInt(newScore[j]));
     console.log(parseInt(diff));
-   if (diff < 4){
-        match = dogs[i].name;
-        matchPic = dogs[i].photo;
-        res.json(match + matchPic);
+
+      }
+      if (diff <= lowestNumber.lowestScore){
+        lowestNumber.matchName = dogs[i].name;
+        lowestNumber.matchPic = dogs[i].photo;
+        lowestNumber.lowestScore = diff;
    }
 
-   else {
-     res.json("Sorry, you do not have any matches!")
-   }
-  
-
-  }
     }
+    res.json(lowestNumber);
   });
 }

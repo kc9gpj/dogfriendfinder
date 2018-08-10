@@ -18,7 +18,7 @@ var dogs = [
 	},
 	{
 		name: 'Juno',
-		photo: 'https://imgur.com/gQF96Ej',
+		photo: 'https://i.imgur.com/gQF96Ej.jpg',
 		scores: [
 			'5',
 			'1',
@@ -50,7 +50,7 @@ var dogs = [
 	},
 	{
 		name: 'Jordy',
-		photo: 'https://imgur.com/qugNiwO',
+		photo: 'https://i.imgur.com/qugNiwO.jpg',
 		scores: [
 			'4',
 			'2',
